@@ -1,0 +1,153 @@
+/*
+    #5285a8 Water Blue
+    #729cbf Sky Blue
+    #94b1c6 Background Blue
+    #355367 Text Blue
+*/
+
+/* GENERAL */
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  background: url('img/seaBG.png') #729cbf repeat-x;
+  background-size: auto 100%;
+}
+body {
+  width: 65%;
+  max-width: 1000px;
+  background: #94b1c6;
+  margin: 0 auto;
+  font: 10pt 'Quicksand', sans-serif;
+  height: 100%;
+}
+
+/* SCROLLING */
+html {
+  overflow:hidden;
+}
+body {
+  overflow-y:scroll;
+}
+
+/* NAVIGATION */
+ul {
+  margin-top: 4em;
+  margin-bottom: 150px;
+  font-size: 1.4em;
+  font-weight: bold;
+  list-style: none;
+}
+ul li  {
+  width: 75%;
+  border-bottom: 2px solid #355367;
+  padding: 5px 0;
+}
+ul li a {
+  text-decoration: none;
+  color:  #355367;
+  padding-left: 10px;
+}
+ul li a:hover {
+  color:  #ffffff;
+  padding-left: 20px;
+}
+
+
+/* TYPOGRAPHY */
+h1, h2, h3 {
+  font-family: 'Rammetto One', cursive;
+  color: #355367;
+}
+h1 {
+  font-size: 2.5em;
+  color: #355367;
+  border-bottom: 5px solid #355367;
+  width: 90%;
+}
+p, ol li {
+  margin-bottom: 1em;
+  font-size: 1.2em;
+}
+
+
+/* IMAGES */
+img {
+  width: 90%;
+  padding: 15px 0;
+}
+.sea img {
+  position: absolute;
+  z-index: 9;
+  bottom: 0;
+  left: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* PAGE CONTAINERS */
+
+.container {
+  width: 100%;
+  margin: 2em auto;
+  z-index: 1;
+  padding: 40px;
+}
+
+.leftCol,
+.leftText,
+.rightCol,
+.rightText {
+  float: left;
+  width: 90%;
+  text-align: justify;
+}
+.leftCol h1 {
+  text-align: left;
+}
+a {
+  font-size: .8em;
+}
+
+
+
+
+
+@media screen and (min-width: 1020px) {
+  .leftCol,
+  .leftText {
+    float: left;
+
+  }
+  .rightCol,
+  .rightText {
+    float: right;
+  }
+
+  .leftText,
+  .rightText {
+    width: 48%;
+  }
+  .leftCol {
+    width: 65%;
+  }
+  .rightCol {
+    width: 30%;
+    float: right;
+  }
+
+  .rightText {
+    padding-left: 2%;
+  }
+  .leftText {
+    padding-right: 2%;
+  }
+  p:last-child {
+    margin-bottom: 150px;
+  }
+  img,
+  h1 {
+    width: 100%;
+  }
+}
