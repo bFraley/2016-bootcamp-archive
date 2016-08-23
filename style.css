@@ -1,0 +1,54 @@
+/* New stylesheet for HTML-challenge */
+
+/*    
+
+ 'Quicksand'
+'Rammetto One'
+*/
+
+html {
+    overflow:hidden;
+}
+
+body {
+    font-size:1.1em;
+    font-family: sans-serif;
+    background: url("img/seaBG.png") #729cbf;
+    background: url('img/seaBG.png') #729cbf repeat-x;
+    background-size: auto 100%;
+    overflow-y:scroll;
+}
+
+header {
+    text-align:center;
+    font-family:cursive;
+    color: #355367;
+}
+
+header img {
+	margin:auto;
+	width:50%;
+	max-width:60%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	text-align:center;
+    font-family:'Rammetto One', 'cursive';
+    color: #355367;
+}
+
+li span {
+	font-weight:900;
+}
+
+#main-container {
+    width:95%;
+    margin:0 auto;
+}
+
+footer img {
+	width:100%;
+	position:absolute;
+	bottom:0;
+}
+
