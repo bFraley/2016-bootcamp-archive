@@ -1,4 +1,5 @@
-/* New stylesheet for HTML-challenge */
+/* Brett Fraley - Awesome Inc U Bootcamp 2016
+New stylesheet for HTML-challenge */
 
 html {
 	margin: 0;
@@ -11,40 +12,59 @@ body {
 	padding: 0;
     font-size: 1.1em;
     font-family: 'Quicksand', sans-serif;
-    background: url("img/seaBG.png") center top #729cbf no-repeat;
+    background: #729cbf;
 }
 
 header {
     text-align: center;
     font-family: 'Rammetto One', cursive;
     color: #355367;
+    padding:20px;
+    margin:0;
     margin-bottom:25px;
+     /* background clouds/birds image over background gradient */
+    background: #729cbf;
+    background-image: url("img/seaBG.png"); 
+	background-image: url("img/seaBG.png"), -moz-linear-gradient(top, #729cbf 0%, #21b4e2 0%, #355367 100%);
+	background-image: url("img/seaBG.png"), -webkit-gradient(left top, left bottom, color-stop(0%, #729cbf), color-stop(0%, #21b4e2), color-stop(100%, #355367));
+	background-image: url("img/seaBG.png"),-webkit-linear-gradient(top, #729cbf 0%, #21b4e2 0%, #355367 100%);
+	background-image: url("img/seaBG.png"), -o-linear-gradient(top, #729cbf 0%, #21b4e2 0%, #355367 100%);
+	background-image: url("img/seaBG.png"), -ms-linear-gradient(top, #729cbf 0%, #21b4e2 0%, #355367 100%);
+	background-image: url("img/seaBG.png"),linear-gradient(to bottom, #729cbf 0%, #21b4e2 0%, #355367 100%);
+	background-image: url("img/seaBG.png"),filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#729cbf', endColorstr='#355367', GradientType=0 );
+    background-position: center top;
+    background-repeat: no-repeat;
 }
 
 header img {
 	margin: auto;
-	width: 40%;
+	width: 80%;
 	max-width: 60%;
 }
 
-a, a:hover, a:visited, a:focus {
-	color: lighblue;
-	text-decoration:none;
+/* Anchor selectors */
+a:link, a:hover, a:visited, a:focus {
+	color: lightblue;
+	text-decoration: none;
 }
 
 a:hover {
-	color:#FFF;
+	color: #FFF;
+}
 
+a:active {
+	color:#008fcc;
 }
 
 #main-container {
-	display:block;
-	margin:0 auto;
-    width:95%;
-    max-width:2500px;
-    min-width:350px;
-    padding-bottom:250px; /* ample space at the bottom of page */
-    overflow:auto;  /* otherwise content 'escapes' */
+	display: block;
+	margin: 0 auto;
+    width: 95%;
+    max-width: 2500px;
+    min-width: 350px;
+    padding-bottom: 250px; /* ample space at the bottom of page */
+    overflow: auto;  /* otherwise content 'escapes' */
+    background-color: none;
 }
 
 /* Each section gets left float.
@@ -60,10 +80,11 @@ section {
 }
 
 article {
-	background-color:#729cbf;
-	padding:5px;
-	font-style: justify;
+	background-color: #729cbf;
+	padding: 5px;
+	text-align:justify;
     border-bottom:solid 2px #eee;
+    margin-bottom:10px;
 }
 
 h1 {
@@ -72,51 +93,94 @@ h1 {
 
 h1, h2, h3, h4, h5, h6 {
 	text-align: center;
-    font-family:'Rammetto One', cursive;
+    font-family: 'Rammetto One', cursive;
     color: #355367;
+    text-shadow: 0px 1px 5px #eee;
 }
 
-ul {
+ol li, ul li {
+	margin-bottom: 15px;
 	list-style: none;
 }
 
 ul li {
-  margin:3px;
+  margin: 3px;
   padding: 5px 0;
 }
 
-li span {
-	font-weight:900;
+ul li span {
+	font-size:1.2em;
+	color:#111;
+	font-weight: 900;
 }
 
 aside {
+	text-align: center;
     float: right;
-    position:fixed;
-    top:20px;
-    right:5px;
-    margin-left:10px;
+    position: fixed;
+    top: 20px;
+    right: 10px;
+    margin-left: 10px;
+    font-size: 0.8em;
 }
 
 aside ul li {
-	border-bottom:solid 2px #333;
+	color: #fff;
+    padding: 7px;
+    border-radius: 20px;
+	border-bottom: solid 1px #333;
+	text-shadow: 0px 1px 1px #555;
+	opacity: 0.9;
+}
+
+aside ul li:hover {
+    opacity: 1;
+
 }
 
 footer {
-	margin:0px
-	padding:20px;
-    width:100%;
-	position:fixed;
-	bottom:0;
+	margin: 0px
+	padding: 20px;
+    width: 100%;
+	position: fixed;
+	bottom: 0;
 	box-shadow: inset -10px 0px 50px #5e9ac1;
-	font-size:10pt;
-	text-align:center;
+	font-size: 10pt;
+	text-align: center;
 }
 
 footer img {
-	float:left;
-    z-index:100;
-    opacity:0.8;
+	float: left;
+    opacity: 0.9;
     bottom: 0;
     width: 100%;
 }
 
+/* Media query - viewport < 500px --> no float  */
+@media (max-width:800px) {
+    
+    #main-container, header {
+    	min-width:300px;
+    }
+
+    section {
+    	width: 90%;
+    	float: none;
+    	margin: 20px auto;
+    }
+
+    aside {
+    	position: absolute;
+    	top:20px;
+    	right:3px;
+    	font-size:0.6em;
+    }
+
+    header h1 {
+    	font-size: 1em;
+    }
+
+    header img {
+    	width:50%;
+    }
+}
