@@ -1,86 +1,122 @@
 /* New stylesheet for HTML-challenge */
 
-/*    
-
- 'Quicksand'
-'Rammetto One'
-*/
-
 html {
 	margin: 0;
 	padding: 0;
+	font-size:100%;
 }
 
 body {
 	margin: 0;
 	padding: 0;
-    font-size:1.1em;
-    font-family: sans-serif;
-    background: url("img/seaBG.png") #729cbf;
-    background: url('img/seaBG.png') #729cbf repeat-x;
-    background-size: auto 100%;
-    overflow-y:scroll;
+    font-size: 1.1em;
+    font-family: 'Quicksand', sans-serif;
+    background: url("img/seaBG.png") top center #729cbf no-repeat;
 }
 
 header {
-    text-align:center;
-    font-family:'cursive';
+    text-align: center;
+    font-family: 'Rammetto One', cursive;
     color: #355367;
+    margin-bottom:25px;
 }
 
 header img {
-	margin:auto;
-	width:50%;
-	max-width:60%;
+	margin: auto;
+	width: 40%;
+	max-width: 60%;
+}
+
+#main-container {
+	display:block;
+	margin:0 auto;
+    width:95%;
+    max-width:2500px;
+    min-width:350px;
+    padding-bottom:250px; /* ample space at the bottom of page */
+    overflow:auto;  /* otherwise content 'escapes' */
+}
+
+/* Each section gets left float.
+   Any section element that does not,
+   or needs more specific rules should
+   go below this section selector.
+ */
+section {
+	width:40%;
+	margin:20px;
+	float:left;
+	margin-bottom:15px;
+}
+
+article {
+	background-color:#729cbf;
+	padding:5px;
+	font-style: justify;
+    border-bottom:solid 2px #eee;
+}
+
+h1 {
+	text-decoration: underline;
 }
 
 h1, h2, h3, h4, h5, h6 {
-	text-align:center;
-    font-family:'Rammetto One', 'cursive';
+	text-align: center;
+    font-family:'Rammetto One', cursive;
     color: #355367;
+}
+
+ul {
+	list-style: none;
+}
+
+ul li {
+  margin:3px;
+  padding: 5px 0;
+}
+
+ul li a {
+	text-decoration: none;
+	color: #355367;
+}
+
+ul li a:hover {
+	color: #eee;
 }
 
 li span {
 	font-weight:900;
 }
 
-#main-container {
-    width:90%;
-    margin:0 auto;
-}
-
-.left-column {
-	width:200px;
-	max-width:25%;
-	margin:10px auto;
-    float:left;
-}
-
-.right-column {
-    width:200px;
-	max-width:25%;
-	margin:10px auto;
-    float:left
-}
-
 aside {
-    float:right;
+	display:inline-block;
+    padding: 5px;
+    float: right;
+    position:fixed;
+    top:20px;
+    right:5px;
+}
 
+aside ul li {
+	border-bottom:solid 2px #333;
 }
 
 footer {
+	margin:0px
+	padding:20px;
     width:100%;
-	position:absolute;
+	position:fixed;
 	bottom:0;
+	box-shadow: inset -10px 0px 200px ##5e9ac1;
+	font-size:10pt;
 	text-align:center;
 }
 
-
-.sea {
-  position: absolute;
-  z-index: 9;
-  bottom: 0;
-  left: 0;
-  padding: 0;
-  width: 100%;
+footer img {
+	float:left;
+    z-index:100;
+    opacity:0.8;
+    bottom: 0;
+    width: 100%;
 }
+
