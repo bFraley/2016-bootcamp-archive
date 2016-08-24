@@ -1,14 +1,20 @@
 <!DOCTYPE html>
-<head>
-    <title>HTML Challenge</title>
-    <link href='http://fonts.googleapis.com/css?family=Ribeye+Marrow|Rammetto+One|Quicksand:400,700' rel='stylesheet' type='text/css'/>
-    <link rel="stylesheet" href="style.css"/>
-</head>
+<html lang="en">
+    <head>
+        <title>HTML Challenge</title>
+        <meta charset="UTF-8">
+        <link href='http://fonts.googleapis.com/css?family=Ribeye+Marrow|Rammetto+One|Quicksand:400,700' rel='stylesheet' type='text/css'/>
+        <link rel="stylesheet" href="style.css"/>
+    </head>
 
-<body>
-    <!-- HEADING CONTENT -->
+    <body>
+        <!-- HEADING CONTENT -->
 
-    <header>
+        <header>
+            <h1>HTML Drill</h1>
+            <img src="img/placeholder.png" alt="placeholder image unavailable"/>
+        </header>
+
         <!-- Top aside list content -->
         <aside> 
             <ul>
@@ -23,140 +29,136 @@
             </ul>
         </aside>
 
-        <h1>HTML Drill</h1>
-        <img src="img/placeholder.png"/>
-    </header>
+        <!-- MAIN CONTENT -->
+        <div id="main-container">
+            
+            <!-- The left side content section -->
+            <section>
+                <article>
+                    <h2>What is the challange?</h2>
+            
+                    <p>This page has been created using some of the most common HTML 
+                    and CSS errors I have seen, and some of the worst practices. </p>
 
-    <!-- MAIN CONTENT -->
-    <div id="main-container">
-        
-        <!-- The left side content section -->
-        <section>
-            <article>
-                <h2>What is the challange?</h2>
-        
-                <p>This page has been created using some of the most common HTML 
-                and CSS errors I have seen, and some of the worst practices. </p>
+                    <p>This page uses out-dated code practices that are no longer considered
+                    best practice, and it definitely doesn't look like the mock-up provided.</p>
+                </article>
 
-                <p>This page uses out-dated code practices that are no longer considered
-                best practice, and it definitely doesn't look like the mock-up provided.</p>
-            </article>
+                <article>
+                    <h2>Overview of your goals</h2>
 
-            <article>
-                <h2>Overview of your goals</h2>
+                    <p>You need to get this page up and running.</p>
 
-                <p>You need to get this page up and running.</p>
+                    <ol>
+                        <li><span>Remove tags that have been removed from the HTML5 standard.</span>
+                        See this<a href="http://www.w3schools.com/tags/default.asp"> handy list from W3Schools</a> 
+                        for what tags have been removed from HTML5. Using the new semantic tags like: article, section, 
+                        aside, header, &amp; footer. Or, you can use div tags if you prefer</li>
 
-                <ol>
-                    <li><span>Remove tags that have been removed from the HTML5 standard.</span>
-                    See this<a href="http://www.w3schools.com/tags/default.asp"> handy list from W3Schools</a> 
-                    for what tags have been removed from HTML5. Using the new semantic tags like: article, section, 
-                    aside, header, &amp; footer. Or, you can use div tags if you prefer</li>
+                        <li><span>Update to best styling practices. </span>Remove all inline styles used and
+                         create / link an external style sheet for all necessary CSS.</li>
 
-                    <li><span>Update to best styling practices. </span>Remove all inline styles used and
-                     create / link an external style sheet for all necessary CSS.</li>
+                        <li><span>Make it responsive.</span> Most sites are viewed on mobile devices now,
+                         so we need to create websites that have been optimized for viewing on mobile as
+                        well as desktop. I would suggest using @media queries, but you can do it anyway you like.</li>
 
-                    <li><span>Make it responsive.</span> Most sites are viewed on mobile devices now,
-                     so we need to create websites that have been optimized for viewing on mobile as
-                    well as desktop. I would suggest using @media queries, but you can do it anyway you like.</li>
+                        <li><span>Does it validate?</span>Make sure your page 
+                        will validate using <a href="https://validator.w3.org/">W3C Markup Validation 
+                        Service(https://validator.w3.org/)</a></li>
+                    </ol>
+                </article>
 
-                    <li><span>Does it validate?</span>Make sure your page 
-                    will validate using <a href="https://validator.w3.org/">W3C Markup Validation 
-                    Service(https://validator.w3.org/)</a></li>
-                </ol>
-            </article>
+                <article>
+                    <h2>Want to do more?</h2>
 
-            <article>
-                <h2>Want to do more?</h2>
+                    <p>Getting the page layout to match the design mock-up and getting 
+                    the code to validate is your main goals on this Code Challange. If you finish 
+                    it and want to expand on this project, here are some ideas:</p>
 
-                <p>Getting the page layout to match the design mock-up and getting 
-                the code to validate is your main goals on this Code Challange. If you finish 
-                it and want to expand on this project, here are some ideas:</p>
+                    <ul>
+                        <li>Use a framework like<a href="http://foundation.zurb.com/">Foundation(http://foundation.zurb.com/)</a>
+                         or <a href="http://getbootstrap.com/">Bootstrap(http://getbootstrap.com/)</a> to build the site out.</li>
 
-                <ul>
-                    <li>Use a framework like<a href="http://foundation.zurb.com/">Foundation(http://foundation.zurb.com/)</a>
-                     or <a href="http://getbootstrap.com/">Bootstrap(http://getbootstrap.com/)</a> to build the site out.</li>
+                        <li>Create a matching "About" page.</li>
+                        <li>Create a matching "Contact" page with a form that users can use to send a quick message,
+                         as well as links to connect on social media like LinkedIn or Facebook.</li>
 
-                    <li>Create a matching "About" page.</li>
-                    <li>Create a matching "Contact" page with a form that users can use to send a quick message,
-                     as well as links to connect on social media like LinkedIn or Facebook.</li>
+                        <li>Create a matching "Gallery" page to display pictures.</li>
 
-                    <li>Create a matching "Gallery" page to display pictures.</li>
+                        <li>If you have already gotten to the JavaScrpt and jQuery courses, you could integrate
+                         your image slider into the hero image on this homepage, or turn the side navigation into a drop-down menu.</li>
+                    </ul>
+                </article>
 
-                    <li>If you have already gotten to the JavaScrpt and jQuery courses, you could integrate
-                     your image slider into the hero image on this homepage, or turn the side navigation into a drop-down menu.</li>
-                </ul>
-            </article>
+            </section>    <!-- end left side content section -->
 
-        </section>    <!-- end left side content section -->
+            <!-- The right side content section -->
+            <section>
+                 <article>
+                    <h2>Final Page Requirements:</h2>
+                    <ul>
+                        <li><span>Navigation and Links</span>
+                            <ul>
+                                <li>Navigation links must be clickable, but they don't need to actually go anywhere</li>
+                                <li>Links that go to other outside websites should open in a new tab or window</li>
+                            </ul>
+                        </li>
 
-        <!-- The right side content section -->
-        <section>
-             <article>
-                <h2>Final Page Requirements:</h2>
-                <ul>
-                    <li><span>Navigation and Links</span>
-                        <ul>
-                            <li>Navigation links must be clickable, but they don't need to actually go anywhere</li>
-                            <li>Links that go to other outside websites should open in a new tab or window</li>
-                        </ul>
-                    </li>
+                        <li><span>Typography</span>
+                            <ul>
+                                <li>Heading fonts should be in the Rammetto One font. (Use google fonts) 
+                                If you really don't like this font, feel free to pick a different font that 
+                                you like better, but it must be a webfont and the font for the headings must 
+                                be different from the font used for the rest of the site.</li>
+                            </ul>
+                        </li>
 
-                    <li><span>Typography</span>
-                        <ul>
-                            <li>Heading fonts should be in the Rammetto One font. (Use google fonts) 
-                            If you really don't like this font, feel free to pick a different font that 
-                            you like better, but it must be a webfont and the font for the headings must 
-                            be different from the font used for the rest of the site.</li>
-                        </ul>
-                    </li>
+                        <li><span>Images</span>
+                            <ul>
+                                <li>The placeholder image must stretch to sit over the area above the main 
+                                text of the site, but not above the navigation link.</li>
 
-                    <li><span>Images</span>
-                        <ul>
-                            <li>The placeholder image must stretch to sit over the area above the main 
-                            text of the site, but not above the navigation link.</li>
+                                <li>The sea image needs to stay stuck at the bottom of the screen, whatever 
+                                size screen it is being viewed on.</li>
+                            </ul>
+                        </li>
 
-                            <li>The sea image needs to stay stuck at the bottom of the screen, whatever 
-                            size screen it is being viewed on.</li>
-                        </ul>
-                    </li>
+                        <li><span>Validation and Best Practices</span>
+                            <ul>
+                                <li>Your site either needs to pass validation, or you need a good reason / 
+                                explination for why you are leaving certain "errors" present.</li>
 
-                    <li><span>Validation and Best Practices</span>
-                        <ul>
-                            <li>Your site either needs to pass validation, or you need a good reason / 
-                            explination for why you are leaving certain "errors" present.</li>
+                                <li>Follow good SEO practices like adding alt text to images.</li>
 
-                            <li>Follow good SEO practices like adding alt text to images.</li>
+                                <li>CSS should be in an attached external style sheet, and should be well organized.</li>
+                                <li>Use comments as needed</li>
+                            </ul>
+                    </ul>
+                </article>
+                    
+                <article>
+                    <h2>Random SubTitle</h2>
 
-                            <li>CSS should be in an attached external style sheet, and should be well organized.</li>
-                            <li>Use comments as needed</li>
-                        </ul>
-                </ul>
-            </article>
-                
-            <article>
-                <h2>Random SubTitle</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda aut autem consequatur
+                    consequuntur cum cupiditate eaque facere fugiat illum itaque maxime minus nam officia, quidem
+                    repudiandae tenetur unde voluptatibus. Odit.</p>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda aut autem consequatur
-                consequuntur cum cupiditate eaque facere fugiat illum itaque maxime minus nam officia, quidem
-                repudiandae tenetur unde voluptatibus. Odit.</p>
+                    <p>Animi dolorum enim ex illo ipsam iste nemo, provident quas quis ullam! Aperiam aspernatur 
+                    ex fugit in nostrum omnis praesentium? Asperiores assumenda impedit incidunt ipsum quam quasi
+                    sequi temporibus,ullam!</p>
 
-                <p>Animi dolorum enim ex illo ipsam iste nemo, provident quas quis ullam! Aperiam aspernatur 
-                ex fugit in nostrum omnis praesentium? Asperiores assumenda impedit incidunt ipsum quam quasi
-                sequi temporibus,ullam!</p>
+                    <p>Alias aut blanditiis cumque dolorem dolorum ducimus eius, error eveniet 
+                    fugiat hic incidunt iusto minima nihil nisi non nostrum nulla optio quae quia 
+                    sint soluta sunt tempore voluptatum? Cupiditate,ex.</p>
+                </article>
 
-                <p>Alias aut blanditiis cumque dolorem dolorum ducimus eius, error eveniet 
-                fugiat hic incidunt iusto minima nihil nisi non nostrum nulla optio quae quia 
-                sint soluta sunt tempore voluptatum? Cupiditate,ex.</p>
-            </article>
-
-        </section> <!-- end right side content section -->
+            </section> <!-- end right side content section -->
 
 
-    </div> <!-- end div id: main-container -->
+        </div> <!-- end div id: main-container -->
 
-        <footer>    
-            <img src="img/sea.png"/>
-        </footer>
+            <footer>    
+                <img src="img/sea.png"/>
+            </footer>
 
-</body>
+    </body>

@@ -11,7 +11,7 @@ body {
 	padding: 0;
     font-size: 1.1em;
     font-family: 'Quicksand', sans-serif;
-    background: url("img/seaBG.png") top center #729cbf no-repeat;
+    background: url("img/seaBG.png") center top #729cbf no-repeat;
 }
 
 header {
@@ -25,6 +25,16 @@ header img {
 	margin: auto;
 	width: 40%;
 	max-width: 60%;
+}
+
+a, a:hover, a:visited, a:focus {
+	color: lighblue;
+	text-decoration:none;
+}
+
+a:hover {
+	color:#FFF;
+
 }
 
 #main-container {
@@ -75,26 +85,16 @@ ul li {
   padding: 5px 0;
 }
 
-ul li a {
-	text-decoration: none;
-	color: #355367;
-}
-
-ul li a:hover {
-	color: #eee;
-}
-
 li span {
 	font-weight:900;
 }
 
 aside {
-	display:inline-block;
-    padding: 5px;
     float: right;
     position:fixed;
     top:20px;
     right:5px;
+    margin-left:10px;
 }
 
 aside ul li {
@@ -107,7 +107,7 @@ footer {
     width:100%;
 	position:fixed;
 	bottom:0;
-	box-shadow: inset -10px 0px 200px ##5e9ac1;
+	box-shadow: inset -10px 0px 50px #5e9ac1;
 	font-size:10pt;
 	text-align:center;
 }
