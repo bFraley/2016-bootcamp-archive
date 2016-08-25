@@ -1,4 +1,8 @@
 # HTML-challenge
+
+My complete, but ongoing, solution to this challenge is published 
+[HERE](https://bfraley.github.io/HTML-challenge/)
+
 An HTML/CSS page that is intentionally broken. 
 The goal is to have students identify and fix the code. 
 This is a real-world situation that they may face in the tech industry. 
