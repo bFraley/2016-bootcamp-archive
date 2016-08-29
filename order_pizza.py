@@ -32,6 +32,12 @@ def display_total_cost(pizzas):
     print("===========")
     print("TOTAL COST: ${}".format(total_cost))
 
+def display_order(pizzas):
+    display_pizzas(my_pizzas)
+    display_total_cost(my_pizzas)
+    print("\n\n")
+
+
 def add_to_order():
     """
     Prompts for adding pizza to the order
@@ -51,7 +57,17 @@ def add_to_order():
         else:
             display_invalid_option(pizza_selection)
 
+def order_pizza(pizzas):
+    if len(pizzas) > 0:
+        print("Thank you for your order!")
+        return True
+    else:
+        print("Please add pizzas to your order before completing the order")
+        return False
+
 def main():
+    global my_pizzas
+
     MENU_ITEMS = (
         "1: Add Pizza to Order",
         "2: Remove Pizza from Order",
@@ -73,11 +89,11 @@ def main():
         elif menu_selection == "2":
             pass
         elif menu_selection == "3":
-            display_pizzas(my_pizzas)
-            display_total_cost(my_pizzas)
-            print("\n\n")
+            display_order(my_pizzas)
         elif menu_selection == "4":
-            pass
+            display_order(my_pizzas)
+            if order_pizza(my_pizzas):
+                my_pizzas = []
         else:
             display_invalid_option(menu_selection)
 
