@@ -57,12 +57,13 @@ def add_to_order():
         else:
             display_invalid_option(pizza_selection)
 
-def order_pizza(pizzas):
-    if len(pizzas) > 0:
-        print("Thank you for your order!")
-        return True
+def order_pizza():
+    global my_pizzas
+    if len(my_pizzas) > 0:
+        print("Thank you for your order!\n")
+        my_pizzas = []
     else:
-        print("Please add pizzas to your order before completing the order")
+        print("Please add pizzas to your order before completing the order\n")
         return False
 
 def main():
@@ -92,8 +93,7 @@ def main():
             display_order(my_pizzas)
         elif menu_selection == "4":
             display_order(my_pizzas)
-            if order_pizza(my_pizzas):
-                my_pizzas = []
+            order_pizza()
         else:
             display_invalid_option(menu_selection)
 
