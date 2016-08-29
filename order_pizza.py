@@ -21,7 +21,7 @@ def main():
         menu_selection = input("\nPlease select an option from above? ")
 
         if menu_selection == "0":
-            pass
+            break
         elif menu_selection == "1":
             pass
         elif menu_selection == "2":
