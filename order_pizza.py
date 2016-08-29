@@ -33,8 +33,8 @@ def display_total_cost(pizzas):
     print("TOTAL COST: ${}".format(total_cost))
 
 def display_order(pizzas):
-    display_pizzas(my_pizzas)
-    display_total_cost(my_pizzas)
+    display_pizzas(pizzas)
+    display_total_cost(pizzas)
     print("\n\n")
 
 
@@ -54,6 +54,27 @@ def add_to_order():
             break
         elif is_valid_pizza(pizza_selection, PIZZAS):
             my_pizzas.append(PIZZAS[int(pizza_selection) - 1])
+        else:
+            display_invalid_option(pizza_selection)
+
+def remove_from_order():
+    """
+    Remove a pizza from my_pizzas based on user's input
+    """
+
+    global my_pizzas
+
+    while True:
+        print("\n")
+        display_order(my_pizzas)
+        print("0: Go back")
+
+        pizza_selection = input("\nWhich pizza would you like to remove? ")
+
+        if pizza_selection == "0":
+            break
+        elif is_valid_pizza(pizza_selection, my_pizzas):
+            del my_pizzas[int(pizza_selection) - 1]
         else:
             display_invalid_option(pizza_selection)
 
@@ -88,7 +109,7 @@ def main():
         elif menu_selection == "1":
             add_to_order()
         elif menu_selection == "2":
-            pass
+            remove_from_order()
         elif menu_selection == "3":
             display_order(my_pizzas)
         elif menu_selection == "4":
