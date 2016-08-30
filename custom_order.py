@@ -16,6 +16,14 @@ def display_selection_error(menu_selection):
         print("\n{} is not a number. Please select a number from the options above."
             .format(menu_selection))
 
+class Topping():
+    """
+    What goes on a pizza
+    """
+
+    def __init__(self, name, price=1.00):
+        self.name = name
+        self.price = price
 
 class Pizza():
     MENU_ITEMS = (
@@ -26,8 +34,14 @@ class Pizza():
         "0: Cancel",
     )
 
+    AVAILABLE_TOPPINGS = (
+        Topping("Cheese"),
+        Topping("Pepperoni", 2.00),
+        Topping(name="Sausage", price=2.50),
+    )
+
     def __init__(self):
-        pass
+        self.toppings = []
 
     @classmethod
     def make_pizza(cls):
