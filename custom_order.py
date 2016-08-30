@@ -65,6 +65,8 @@ class Pizza():
                 pizza.add_toppings()
             elif menu_selection == "2":
                 pizza.display_toppings()
+            elif menu_selection == "3":
+                pizza.remove_toppings()
             elif menu_selection == "4":
                 return pizza
             else:
@@ -87,13 +89,13 @@ class Pizza():
 
         return menu_items
 
-    def is_valid_topping(self, selection):
+    def is_valid_topping(self, selection, toppings=AVAILABLE_TOPPINGS):
         """
         Checks to make sure a selection is valid
         """
 
         return (selection.isdigit()
-            and int(selection) - 1 < len(self.AVAILABLE_TOPPINGS))
+            and int(selection) - 1 < len(toppings))
 
     def add_toppings(self):
         """
@@ -123,6 +125,18 @@ class Pizza():
 
         print("="*10)
         print("TOTAL PRICE: ${:,.2f}".format(self.get_total_price()))
+
+    def remove_toppings(self):
+        while True:
+            menu_selection = get_menu_selection(
+                self.get_toppings_menu_list(self.toppings))
+
+            if menu_selection == "0":
+                break
+            elif self.is_valid_topping(menu_selection, self.toppings):
+                topping = self.toppings[int(menu_selection) - 1]
+                self.toppings.remove(topping)
+                print("\n{} removed from the pizza!".format(topping))
 
 
 class Cart():
