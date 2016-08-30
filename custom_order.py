@@ -25,6 +25,9 @@ class Topping():
         self.name = name
         self.price = price
 
+    def __str__(self):
+        return "{} ${:,.2f}".format(self.name, self.price)
+
 class Pizza():
     MENU_ITEMS = (
         "1: Add Toppings",
@@ -57,12 +60,49 @@ class Pizza():
 
             if menu_selection == "0":
                 return None
+            elif menu_selection == "1":
+                pizza.add_toppings()
+            elif menu_selection == "2":
+                pizza.display_toppings()
             elif menu_selection == "4":
                 return pizza
             else:
                 display_selection_error(menu_selection)
 
         return None
+
+    def get_toppings_menu_list(self, toppings):
+        menu_items = [
+            "{}: {}".format(index + 1, topping)
+            for index, topping in enumerate(toppings)
+        ]
+        menu_items.append("0: Exit")
+
+        return menu_items
+
+    def is_valid_topping(self, selection):
+        return (selection.isdigit()
+            and int(selection) - 1 < len(self.AVAILABLE_TOPPINGS))
+
+    def add_toppings(self):
+        while True:
+            menu_selection = get_menu_selection(
+                self.get_toppings_menu_list(self.AVAILABLE_TOPPINGS))
+
+
+            if menu_selection == "0":
+                break
+            elif self.is_valid_topping(menu_selection):
+                topping = self.AVAILABLE_TOPPINGS[int(menu_selection) - 1]
+                self.toppings.append(topping)
+                print("\n{} added to the pizza!".format(topping))
+            else:
+                display_selection_error(menu_selection)
+
+    def display_toppings(self):
+        for topping in self.toppings:
+            print(topping)
+
 
 class Cart():
     MENU_ITEMS = (
