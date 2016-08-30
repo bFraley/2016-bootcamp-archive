@@ -137,6 +137,8 @@ class Pizza():
                 topping = self.toppings[int(menu_selection) - 1]
                 self.toppings.remove(topping)
                 print("\n{} removed from the pizza!".format(topping))
+            else:
+                display_selection_error(menu_selection)
 
 
 class Cart():
@@ -172,6 +174,24 @@ class Cart():
             print("*"*40)
             print("SHOPPING CART TOTAL: ${:,.2f}".format(self.get_total_price()))
 
+    def remove_pizzas(self):
+        while True:
+            self.display_pizzas()
+            print("0: Cancel")
+            menu_selection = input("\nPlease select a pizza to remove. ")
+
+            if menu_selection == "0":
+                break
+            elif (menu_selection.isdigit() 
+                and int(menu_selection) - 1 < len(self.pizzas)):
+
+                pizza = self.pizzas[int(menu_selection) - 1]
+                self.pizzas.remove(pizza)
+                print("\nPizza {} removed from the cart!".format(menu_selection))
+            else:
+                display_selection_error(menu_selection)
+
+
     def display_menu(self):
         while True:
             menu_selection = get_menu_selection(self.MENU_ITEMS)
@@ -182,6 +202,11 @@ class Cart():
                 self.add_pizza()
             elif menu_selection == "2":
                 self.display_pizzas()
+            elif menu_selection == "3":
+                self.remove_pizzas()
+            elif menu_selection == "4":
+                print("\n Your pizzas are on their way")
+                self.pizzas = []
             else:
                 display_selection_error(menu_selection)
 
