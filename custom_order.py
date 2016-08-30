@@ -43,8 +43,9 @@ class Pizza():
         Topping(name="Sausage", price=2.50),
     )
 
-    def __init__(self):
+    def __init__(self, base_price=5.00):
         self.toppings = []
+        self.base_price = base_price
 
     @classmethod
     def make_pizza(cls):
@@ -71,7 +72,13 @@ class Pizza():
 
         return None
 
+    def get_total_price(self):
+        return self.base_price + sum(topping.price for topping in self.toppings)
+
     def get_toppings_menu_list(self, toppings):
+        """
+        Return a list of format menu items based off the toppings
+        """
         menu_items = [
             "{}: {}".format(index + 1, topping)
             for index, topping in enumerate(toppings)
@@ -81,10 +88,18 @@ class Pizza():
         return menu_items
 
     def is_valid_topping(self, selection):
+        """
+        Checks to make sure a selection is valid
+        """
+
         return (selection.isdigit()
             and int(selection) - 1 < len(self.AVAILABLE_TOPPINGS))
 
     def add_toppings(self):
+        """
+        UI for a user to add a topping to the current pizza
+        """
+
         while True:
             menu_selection = get_menu_selection(
                 self.get_toppings_menu_list(self.AVAILABLE_TOPPINGS))
@@ -100,8 +115,14 @@ class Pizza():
                 display_selection_error(menu_selection)
 
     def display_toppings(self):
-        for topping in self.toppings:
-            print(topping)
+        if len(self.toppings) == 0:
+            print("No toppings")
+        else:
+            for topping in self.toppings:
+                print(topping)
+
+        print("="*10)
+        print("TOTAL PRICE: ${:,.2f}".format(self.get_total_price()))
 
 
 class Cart():
@@ -116,6 +137,9 @@ class Cart():
     def __init__(self):
         self.pizzas = []
 
+    def get_total_price(self):
+        return sum(pizza.get_total_price() for pizza in self.pizzas)
+
     def add_pizza(self):
         pizza = Pizza.make_pizza()
         if pizza is not None:
@@ -123,8 +147,16 @@ class Cart():
             print("\n Pizza added to cart!")
 
     def display_pizzas(self):
-        for pizza in self.pizzas:
-            print(pizza)
+        if len(self.pizzas) == 0:
+            print("There are no pizzas in the cart")
+        else:
+            for index, pizza in enumerate(self.pizzas):
+                print("\n{index}: Pizza {index:<10} ${price:,.2f}"
+                    .format(index=index+1, price=pizza.get_total_price()))
+                pizza.display_toppings()
+            print("")
+            print("*"*40)
+            print("SHOPPING CART TOTAL: ${:,.2f}".format(self.get_total_price()))
 
     def display_menu(self):
         while True:
