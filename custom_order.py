@@ -49,6 +49,7 @@ class Pizza():
                 display_selection_error(menu_selection)
 
         return None
+
 class Cart():
     MENU_ITEMS = (
         "1: Add Pizza",
