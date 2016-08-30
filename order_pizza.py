@@ -23,14 +23,14 @@ def is_valid_pizza(pizza_selection, pizzas):
 def display_pizzas(pizzas):
     if len(pizzas) > 0:
         for index, pizza in enumerate(pizzas):
-            print("{}: {}  cost: ${}".format(index+1, pizza["name"], pizza["cost"]))
+            print("{}: {}  cost: ${:,.2f}".format(index+1, pizza["name"], pizza["cost"]))
     else:
         print("No pizzas found.")
 
 def display_total_cost(pizzas):
     total_cost = sum([pizza["cost"] for pizza in pizzas])
     print("===========")
-    print("TOTAL COST: ${}".format(total_cost))
+    print("TOTAL COST: ${:<10,.2f}".format(total_cost))
 
 def display_order(pizzas):
     display_pizzas(pizzas)
