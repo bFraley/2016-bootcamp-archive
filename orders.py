@@ -1,3 +1,8 @@
+import os
+from datetime import datetime
+
+import yaml
+
 from menus import get_menu_selection, display_selection_error
 from pizzas import Pizza
 
@@ -51,6 +56,26 @@ class Cart():
             else:
                 display_selection_error(menu_selection)
 
+    def save_order(self):
+        if not os.path.exists('./orders'):
+            os.makedirs('./orders')
+
+        order = []
+        for pizza in self.pizzas:
+            pizza_dict = pizza.__dict__
+            order.append(pizza_dict)
+            toppings = []
+
+            for topping in pizza.toppings:
+                toppings.append(topping.__dict__)
+
+            pizza_dict["toppings"] = toppings
+        
+        filepath = "./orders/{}.yml".format(datetime.now())
+
+        with open(filepath, 'w') as order_file:
+            yaml.dump(order, order_file)
+
 
     def display_menu(self):
         while True:
@@ -66,6 +91,7 @@ class Cart():
                 self.remove_pizzas()
             elif menu_selection == "4":
                 print("\n Your pizzas are on their way")
+                self.save_order()
                 self.pizzas = []
             else:
                 display_selection_error(menu_selection)
