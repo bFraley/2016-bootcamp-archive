@@ -4,7 +4,7 @@ from datetime import datetime
 import yaml
 
 from menus import get_menu_selection, display_selection_error
-from pizzas import Pizza
+from pizzas import Pizza, PremadePizza
 
 class Cart():
     MENU_ITEMS = (
@@ -17,6 +17,7 @@ class Cart():
 
     def __init__(self):
         self.pizzas = []
+        self.available_pizzas = []
 
     def get_total_price(self):
         return sum(pizza.get_total_price() for pizza in self.pizzas)
@@ -75,6 +76,14 @@ class Cart():
 
         with open(filepath, 'w') as order_file:
             yaml.dump(order, order_file)
+
+    def set_available_pizzas(self, pizzas_list):
+        for pizza_dict in pizzas_list:
+            pizza = PremadePizza.load_from_dict(pizza_dict)
+            self.available_pizzas.append(pizza)
+
+        for pizza in self.available_pizzas:
+            print(pizza)
 
 
     def display_menu(self):
