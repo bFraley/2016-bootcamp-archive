@@ -1,0 +1,20 @@
+- name: Drew's Special
+  toppings:
+    - name: Vegan Cheese
+      price: 1.00
+    - name: Tofurkey
+      price: 6.50
+- name: Nick's Special
+  toppings:
+    - name: Dairy Free Cheese
+      price: 0.50
+    - name: Chicken
+      price: 2.00
+    - name: Left Over Stew
+      price: 4.00
+- name: Soylent Goodness
+  toppings:
+    - name: Soy Cheese
+      price: 0.00
+    - name: Soylent
+      price: 2.50
