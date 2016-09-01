@@ -8,10 +8,11 @@ from pizzas import Pizza, PremadePizza
 
 class Cart():
     MENU_ITEMS = (
-        "1: Add Pizza",
-        "2: Display Pizzas",
-        "3: Remove Pizza",
-        "4: Place order",
+        "1: Select Premade Pizza",
+        "2: Add Pizza",
+        "3: Display Pizzas",
+        "4: Remove Pizza",
+        "5: Place order",
         "0: Exit",
     )
 
@@ -33,8 +34,8 @@ class Cart():
             print("There are no pizzas in the cart")
         else:
             for index, pizza in enumerate(self.pizzas):
-                print("\n{index}: Pizza {index:<10} ${price:,.2f}"
-                    .format(index=index+1, price=pizza.get_total_price()))
+                print("\n{index}: {pizza}"
+                    .format(index=index+1, pizza=pizza))
                 pizza.display_toppings()
             print("")
             print("*"*40)
@@ -82,9 +83,29 @@ class Cart():
             pizza = PremadePizza.load_from_dict(pizza_dict)
             self.available_pizzas.append(pizza)
 
-        for pizza in self.available_pizzas:
-            print(pizza)
+    def select_premade_pizza(self):
+        menu_items = [
+            "{}: {}".format(index+1, pizza)
+            for index, pizza in enumerate(self.available_pizzas)
+        ]
+        menu_items.append("0: Cancel")
+        
+        while True:
+            menu_selection = get_menu_selection(menu_items)
 
+            if menu_selection == "0":
+                break
+            elif (menu_selection.isdigit()
+                and int(menu_selection) -1 < len(self.available_pizzas)):
+
+                pizza = self.available_pizzas[int(menu_selection) - 1]
+                pizza = Pizza.make_pizza(pizza)
+                if pizza is not None:
+                    self.pizzas.append(pizza)
+                    print("\n Pizza added to the cart!")
+                break
+            else:
+                display_selection_error(menu_selection)
 
     def display_menu(self):
         while True:
@@ -93,12 +114,17 @@ class Cart():
             if menu_selection == "0":
                 break
             elif menu_selection == "1":
-                self.add_pizza()
+                if len(self.available_pizzas) > 0:
+                    self.select_premade_pizza()
+                else:
+                    print("\n There are no premade pizzas to select")
             elif menu_selection == "2":
-                self.display_pizzas()
+                self.add_pizza()
             elif menu_selection == "3":
-                self.remove_pizzas()
+                self.display_pizzas()
             elif menu_selection == "4":
+                self.remove_pizzas()
+            elif menu_selection == "5":
                 print("\n Your pizzas are on their way")
                 self.save_order()
                 self.pizzas = []
