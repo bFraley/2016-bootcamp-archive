@@ -27,7 +27,7 @@
     </header>
     <div class="container" ng-cloak ng-controller="MainCtrl">
         <label for="word-input">Input</label>
-        <textarea class="form-control" rows="10" id="word-input"></textarea>
+        <textarea class="form-control" rows="10" id="word-input" ng-model="userInput"></textarea>
 
         <div class="statistics">
             <table class="table table-striped">
@@ -35,19 +35,19 @@
                 <tbody>
                     <tr>
                         <td>Word Count</td>
-                        <td>0</td>
+                        <td>{{getWordCount()}}</td>
                     </tr>
                     <tr>
                         <td>Character Count</td>
-                        <td>0</td>
+                        <td>{{getCharacterCount()}}</td>
                     </tr>
                     <tr>
                         <td>Most Common Word</td>
-                        <td>0</td>
+                        <td>{{getMostCommonWord()}}</td>
                     </tr>
                     <tr>
                         <td>Most Common Character</td>
-                        <td>0</td>
+                        <td>{{getMostCommonCharacter()}}</td>
                     </tr>
                 </tbody>
             </table>
