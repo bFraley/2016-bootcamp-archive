@@ -9,16 +9,16 @@ angular.module('app', [])
                 .replace(/\s{2,}/g," ");
         }
 
-        function getWordCount(argument) {
+        function getWordCount() {
             const cleanedUserInput = cleanInput($scope.userInput);
             return cleanedUserInput.length && cleanedUserInput.split(' ').length;
         }
 
-        function getCharacterCount(argument) {
+        function getCharacterCount() {
             return $scope.userInput.length;
         }
 
-        function getMostCommonWord(argument) {
+        function getMostCommonWord() {
             const cleanedUserInput = cleanInput($scope.userInput);
             if (cleanedUserInput.length === 0) {
                 return 'n/a';
@@ -35,7 +35,7 @@ angular.module('app', [])
                 ): sortedWordCountPairs[0][0];
         }
 
-        function getMostCommonCharacter(argument) {
+        function getMostCommonCharacter() {
             const cleanedUserInput = cleanInput($scope.userInput);
             if (cleanedUserInput.length === 0) {
                 return 'n/a';
