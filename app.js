@@ -36,7 +36,20 @@ angular.module('app', [])
         }
 
         function getMostCommonCharacter(argument) {
-            return 'n/a';
+            const cleanedUserInput = cleanInput($scope.userInput);
+            if (cleanedUserInput.length === 0) {
+                return 'n/a';
+            }
+
+            const characters = cleanedUserInput.replace(' ', '');
+            const characterCount = R.countBy(R.toLower)(characters);
+            const characterCountPairs = R.toPairs(characterCount);
+            const sortedCharacterCountPairs = R.pipe(R.sortBy(R.prop(1)), R.reverse)(characterCountPairs)
+            return sortedCharacterCountPairs.length > 1 ? 
+                (
+                    sortedCharacterCountPairs[0][1] === sortedCharacterCountPairs[1][1] ? 
+                        'multiple matches' : sortedCharacterCountPairs[0][0]
+                ): sortedCharacterCountPairs[0][0];
         }
 
         $scope.getWordCount = getWordCount;
