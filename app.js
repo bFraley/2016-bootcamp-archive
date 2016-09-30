@@ -3,7 +3,7 @@ angular.module('app', [])
         $scope.userInput = '';
 
         function getWordCount(argument) {
-            return 0;
+            return $scope.userInput.length && $scope.userInput.split(' ').length;
         }
 
         function getCharacterCount(argument) {
