@@ -30,26 +30,33 @@
         <textarea class="form-control" rows="10" id="word-input" ng-model="userInput" ng-trim="true"></textarea>
 
         <div class="statistics">
-            <table class="table table-striped">
-                <tbody>
-                    <tr>
-                        <td>Word Count</td>
-                        <td>{{getWordCount()}}</td>
-                    </tr>
-                    <tr>
-                        <td>Character Count</td>
-                        <td>{{getCharacterCount()}}</td>
-                    </tr>
-                    <tr>
-                        <td>Most Common Word</td>
-                        <td>{{getMostCommonWord()}}</td>
-                    </tr>
-                    <tr>
-                        <td>Most Common Character</td>
-                        <td>{{getMostCommonCharacter()}}</td>
-                    </tr>
-                </tbody>
-            </table>
+            <h3>Statistics</h3>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <span class="pull-right badge">
+                        {{getWordCount()}}
+                    </span>
+                    Word Count
+                </li>
+                <li class="list-group-item">
+                    <span class="pull-right badge">
+                        {{getCharacterCount()}}
+                    </span>
+                    Character Count
+                </li>
+                <li class="list-group-item">
+                    <span class="pull-right badge">
+                        {{getMostCommonWord()}}
+                    </span>
+                    Most Common Word
+                </li>
+                <li class="list-group-item">
+                    <span class="pull-right badge">
+                        {{getMostCommonCharacter()}}
+                    </span>
+                    Most Common Character
+                </li>
+            </ul>
         </div>
     </div>
     <footer class="page-footer">
