@@ -11,3 +11,7 @@ body {
     border-top: 1px solid #aaa;
     padding-top: 20px;
 }
+
+.statistics {
+    margin-top: 24px;
+}
