@@ -10,7 +10,7 @@
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <script src="https://use.fontawesome.com/a04d9e4c1c.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
     <script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
@@ -32,7 +32,39 @@
         </div>
     </header>
 
-<div class="container" ng-cloak ng-controller='MainCtrl'>
+<div class="container" ng-cloak ng-controller='AddressCtrl'>
+  
+   <div class="row">
+       
+       <div class="form-group">
+           <label for="Name">Name</label>
+           <input type="text" ng-model="name" class="forms-control">
+
+           <label for="Title">Title</label>
+           <input type="text" ng-model="title" class="forms-control">
+
+           <label for="Phone">Phone</label>
+           <input type="tel" ng-model="phone" class="forms-control">
+
+           <label for="Email">Email</label>
+           <input type="email" ng-model="email" class="forms-control">
+
+
+           <button ng-click="addNewContact(name, title)">Add Contact</button>
+
+       </div>
+
+
+       <p>Contact List</p>
+       <ul>
+         <li ng-repeat="person in getAddressBook()">    
+                {{person}}
+         </li>
+        </ul>
+
+
+   </div>
+
     
 
     
