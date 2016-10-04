@@ -5,26 +5,36 @@ angular.module('app', [])
 
 function addressController($scope) {
 
-    $scope.adressBook = [];
-    $scope.name = ''
-    $scope.title = ''
-    $scope.phone = ''
-    $scope.phone = ''
+    $scope.addressBook = [
+        {
+            name:'gary',
+            title:'boss',
+            phone:'345423523',
+            email:'g@g.com'
+        }
+    ];
+
+    $scope.contactForm = {
+        name = '',
+        title = '',
+        phone = '',
+        email = ''
+    };
 
     // Add a new contact on new form input.
-    $scope.addNewContact = function(name, title, phone, email) {
+    $scope.addNewContact = function() {
 
-        $scope.adressBook.push(
-            {
-                name:name,
-                title:title,
-                phone:phone,
-                email:email
-            }
-        );
+        var person = {
+            name:$scope.contactForm.name,
+            title:$scope.contactForm.title,
+            phone:$scope.contactForm.phone,
+            email:$scope.contactForm.email
+        }
 
-        console.log($scope.adressBook.length)
-        console.log($scope.addressBook[0])
+        $scope.addressBook.push(person);
+
+        console.log($scope.addressBook.length);
+
     }
 
     $scope.getAddressBook = function() {
@@ -37,13 +47,4 @@ function addressController($scope) {
 
     }
 
-
-
-
-
-
-
-
-
-}
-// *******************
+} // end addressController
