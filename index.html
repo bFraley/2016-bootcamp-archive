@@ -25,34 +25,33 @@
             </div>
         </nav>
     </header>
-    <div class="container" ng-cloak ng-controller="MainCtrl">
+    <div class="container" ng-cloak ng-controller="MainCtrl as mainCtrl">
         <label for="word-input">Input</label>
-        <textarea class="form-control" rows="10" id="word-input" ng-model="userInput" ng-trim="true"></textarea>
-
+        <textarea class="form-control" rows="10" id="word-input" ng-model="mainCtrl.userInput" ng-trim="true"></textarea>
         <div class="statistics">
             <h3>Statistics</h3>
             <ul class="list-group">
                 <li class="list-group-item">
                     <span class="pull-right badge">
-                        {{getWordCount()}}
+                        {{mainCtrl.getWordCount()}}
                     </span>
                     Word Count
                 </li>
                 <li class="list-group-item">
                     <span class="pull-right badge">
-                        {{getCharacterCount()}}
+                        {{mainCtrl.getCharacterCount()}}
                     </span>
                     Character Count
                 </li>
                 <li class="list-group-item">
                     <span class="pull-right badge">
-                        {{getMostCommonWord()}}
+                        {{mainCtrl.getMostCommonWord()}}
                     </span>
                     Most Common Word
                 </li>
                 <li class="list-group-item">
                     <span class="pull-right badge">
-                        {{getMostCommonCharacter()}}
+                        {{mainCtrl.getMostCommonCharacter()}}
                     </span>
                     Most Common Character
                 </li>

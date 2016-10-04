@@ -1,7 +1,4 @@
 'use strict';
-angular.module('app', [])
-    .controller('MainCtrl', mainController);
-
 function cleanInput(input) {
     return input
         .replace(/[?.,\/#!$%\^&\*;:{}=\-_`~()]/g,"")
@@ -17,20 +14,21 @@ const sortPairsDescending = R.pipe(
 
 const countPairs = R.toPairs;
 
-function mainController($scope) {
-    $scope.userInput = '';
+function MainController() {
+    const ctrl = this;
+    ctrl.userInput = '';
 
     function getWordCount() {
-        const cleanedUserInput = cleanInput($scope.userInput);
+        const cleanedUserInput = cleanInput(ctrl.userInput);
         return cleanedUserInput.length && cleanedUserInput.split(' ').length;
     }
 
     function getCharacterCount() {
-        return $scope.userInput.length;
+        return ctrl.userInput.length;
     }
 
     function getMostCommonWord() {
-        const cleanedUserInput = cleanInput($scope.userInput);
+        const cleanedUserInput = cleanInput(ctrl.userInput);
         if (cleanedUserInput.length === 0) {
             return 'n/a';
         }
@@ -47,7 +45,7 @@ function mainController($scope) {
     }
 
     function getMostCommonCharacter() {
-        const cleanedUserInput = cleanInput($scope.userInput);
+        const cleanedUserInput = cleanInput(ctrl.userInput);
         if (cleanedUserInput.length === 0) {
             return 'n/a';
         }
@@ -63,9 +61,12 @@ function mainController($scope) {
             ): sortedCharacterCountPairs[0][0];
     }
 
-    $scope.getWordCount = getWordCount;
-    $scope.getCharacterCount = getCharacterCount;
-    $scope.getMostCommonWord = getMostCommonWord;
-    $scope.getMostCommonCharacter = getMostCommonCharacter;
+    ctrl.getWordCount = getWordCount;
+    ctrl.getCharacterCount = getCharacterCount;
+    ctrl.getMostCommonWord = getMostCommonWord;
+    ctrl.getMostCommonCharacter = getMostCommonCharacter;
 }
+
+angular.module('app', [])
+    .controller('MainCtrl', MainController);
 
