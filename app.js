@@ -17,6 +17,7 @@ const countPairs = R.toPairs;
 function MainController() {
     const ctrl = this;
     ctrl.userInput = '';
+    ctrl.savedInputs = [];
 
     function getWordCount() {
         const cleanedUserInput = cleanInput(ctrl.userInput);
@@ -61,10 +62,19 @@ function MainController() {
             ): sortedCharacterCountPairs[0][0];
     }
 
+    function addSavedInput () {
+        ctrl.savedInputs.push({
+            value: ctrl.userInput,
+            time: Date.now()
+        });
+    }
+
     ctrl.getWordCount = getWordCount;
     ctrl.getCharacterCount = getCharacterCount;
     ctrl.getMostCommonWord = getMostCommonWord;
     ctrl.getMostCommonCharacter = getMostCommonCharacter;
+
+    ctrl.addSavedInput = addSavedInput;
 }
 
 angular.module('app', [])
