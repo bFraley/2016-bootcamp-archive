@@ -65,8 +65,15 @@
 
         <p>Contact List</p>
         <ul>
-            <li ng-repeat="person in addressBook">    
-                {{person.name}}
+            <li ng-repeat="person in addressBook track by $index" ng-click="chosenContact($index)">    
+                <a href="#">{{person.name}}</a>
+            </li>
+        </ul>
+
+        <p>Person to Display</p>
+        <ul>
+            <li ng-repeat="(key,value) in contactDisplay">
+                {{value}}
             </li>
         </ul>
    </div> <!-- close row -->

@@ -7,6 +7,7 @@ angular.module('app', [])
 function addressController($scope) {
 
     $scope.addressBook = [];
+    $scope.contactDisplay = {};
 
     // Define input values, and reset function.
     $scope.contactForm = {
@@ -45,8 +46,8 @@ function addressController($scope) {
     };
 
     // We call this to display a specific contact.
-    $scope.viewContact = function() {
-    
+    $scope.chosenContact = function(selectedContact) {
+        $scope.contactDisplay = $scope.addressBook[selectedContact]
 
     };
 
