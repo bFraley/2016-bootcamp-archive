@@ -8,16 +8,17 @@ function cleanInput(input) {
 const countMap = R.countBy(R.toLower);
 
 const sortPairsDescending = R.pipe(
-    R.sortBy(R.prop(1)),
+    R.sortBy(pair => pair[1]),
     R.reverse
 );
 
 const countPairs = R.toPairs;
 
-function MainController() {
+function MainController($timeout) {
     const ctrl = this;
     ctrl.userInput = '';
     ctrl.savedInputs = [];
+    ctrl.recentlySaved = false;
 
     function getWordCount() {
         const cleanedUserInput = cleanInput(ctrl.userInput);
@@ -38,11 +39,13 @@ function MainController() {
         const wordCount = countMap(words);
         const wordCountPairs = countPairs(wordCount);
         const sortedWordCountPairs = sortPairsDescending(wordCountPairs)
-        return sortedWordCountPairs.length > 1 ? 
-            (
-                sortedWordCountPairs[0][1] === sortedWordCountPairs[1][1] ? 
-                    'multiple matches' : sortedWordCountPairs[0][0]
-            ): sortedWordCountPairs[0][0];
+        if (sortedWordCountPairs.length > 1) {
+             return sortedWordCountPairs[0][1] === sortedWordCountPairs[1][1] ?
+                'multiple matches' : sortedWordCountPairs[0][0];
+        }
+        else {
+            return sortedWordCountPairs[0][0];
+        }
     }
 
     function getMostCommonCharacter() {
@@ -55,11 +58,14 @@ function MainController() {
         const characterCount = countMap(characters);
         const characterCountPairs = countPairs(characterCount);
         const sortedCharacterCountPairs = sortPairsDescending(characterCountPairs)
-        return sortedCharacterCountPairs.length > 1 ? 
-            (
-                sortedCharacterCountPairs[0][1] === sortedCharacterCountPairs[1][1] ? 
-                    'multiple matches' : sortedCharacterCountPairs[0][0]
-            ): sortedCharacterCountPairs[0][0];
+
+        if (sortedCharacterCountPairs.length > 1) {
+             return sortedCharacterCountPairs[0][1] === sortedCharacterCountPairs[1][1] ?
+                'multiple matches' : sortedCharacterCountPairs[0][0];
+        }
+        else {
+            return sortedCharacterCountPairs[0][0];
+        }
     }
 
     function addSavedInput () {
@@ -67,6 +73,12 @@ function MainController() {
             value: ctrl.userInput,
             time: Date.now()
         });
+
+        ctrl.recentlySaved = true;
+
+        $timeout(function() {
+            ctrl.recentlySaved = false;
+        }, 4000);
     }
 
     function setInput(value) {

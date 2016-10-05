@@ -26,6 +26,9 @@
         </nav>
     </header>
     <div class="container" ng-cloak ng-controller="MainCtrl as mainCtrl">
+        <div class="alert alert-success" ng-show="mainCtrl.recentlySaved">
+            Input Saved!
+        </div>
         <div class="row">
             <div ng-class="{'col-md-8': mainCtrl.savedInputs.length }">
                 <h2>Process Input</h2>
@@ -82,7 +85,6 @@
                     </li>
                 </ul>
             </div>
-
         </div>
     </div>
     <footer class="page-footer">
