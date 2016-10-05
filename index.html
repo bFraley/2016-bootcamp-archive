@@ -27,14 +27,6 @@
     </header>
     <div class="container" ng-cloak ng-controller="MainCtrl as mainCtrl">
         <div class="row">
-            <div class="col-md-4 pull-right" ng-show="mainCtrl.savedInputs.length">
-                <h2>Recently Saved</h2>
-                <ul class="list-group">
-                    <li class="list-group-item" ng-repeat="input in mainCtrl.savedInputs | orderBy: '-time'">
-                        {{input.value}}
-                    </li>
-                </ul>
-            </div>
             <div ng-class="{'col-md-8': mainCtrl.savedInputs.length }">
                 <h2>Process Input</h2>
                 <label for="word-input">Input</label>
@@ -72,6 +64,25 @@
                     </ul>
                 </div>
             </div>
+            <div class="col-md-4" ng-show="mainCtrl.savedInputs.length">
+                <h2>Recently Saved</h2>
+                <input
+                    type="text"
+                    class="form-control"
+                    ng-model="mainCtrl.savedSearch"
+                    placeholder="Filter saved inputs"
+                >
+                <hr>
+                <ul class="list-group">
+                    <li
+                        class="list-group-item"
+                        ng-repeat="input in mainCtrl.savedInputs | filter:mainCtrl.savedSearch | orderBy: '-time'"
+                    >
+                        <a href="" ng-click="mainCtrl.setInput(input.value)">{{input.value}}</a>
+                    </li>
+                </ul>
+            </div>
+
         </div>
     </div>
     <footer class="page-footer">

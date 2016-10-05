@@ -69,12 +69,17 @@ function MainController() {
         });
     }
 
+    function setInput(value) {
+        ctrl.userInput = value;
+    }
+
     ctrl.getWordCount = getWordCount;
     ctrl.getCharacterCount = getCharacterCount;
     ctrl.getMostCommonWord = getMostCommonWord;
     ctrl.getMostCommonCharacter = getMostCommonCharacter;
 
     ctrl.addSavedInput = addSavedInput;
+    ctrl.setInput = setInput;
 }
 
 angular.module('app', [])
