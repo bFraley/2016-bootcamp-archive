@@ -8,6 +8,9 @@ function addressController($scope) {
 
     $scope.addressBook = [];
     $scope.contactDisplay = {};
+    $scope.showingForm = false;
+    $scope.showingSaveNewContactButton = false;
+    $scope.showingSaveEditContactButton = false;
 
     // Define input values, and reset function.
     $scope.contactForm = {
@@ -18,11 +21,16 @@ function addressController($scope) {
     };
 
     $scope.resetContactForm = function() {
-        $scope.contactForm.name = '';
-        $scope.contactForm.title = '';
-        $scope.contactForm.phone = '';
-        $scope.contactForm.email = '';
+        $scope.contactForm = {};
+        $scope.showingForm = false;
     };
+
+    // Displays form so user can add new contact
+    $scope.showContactForm = function() {
+        $scope.showingForm = true;
+        $scope.showingSaveNewContactButton = true;
+        $scope.showingSaveEditContactButton = false;
+    }
 
     // Add a new contact to addressBook on new form input.
     $scope.addNewContact = function() {
@@ -36,6 +44,8 @@ function addressController($scope) {
 
         $scope.addressBook.push(person);
 
+        $scope.showingForm = false;
+
         // Reset the contact form.
         $scope.resetContactForm();
     };
@@ -48,7 +58,16 @@ function addressController($scope) {
     // We call this to display a specific contact.
     $scope.chosenContact = function(selectedContact) {
         $scope.contactDisplay = $scope.addressBook[selectedContact]
-
+        // $scope.contactForm = $scope.contactDisplay
     };
+
+    $scope.editContact = function() {
+        // Populate form with data to edit
+        $scope.contactForm = $scope.contactDisplay;
+        // Show form
+        $scope.showingForm = true;
+        $scope.showingSaveNewContactButton = false;
+        $scope.showingSaveEditContactButton = true;
+    }
 
 } // end addressController
