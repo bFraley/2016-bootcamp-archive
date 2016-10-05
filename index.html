@@ -26,36 +26,65 @@
         </nav>
     </header>
     <div class="container" ng-cloak ng-controller="MainCtrl as mainCtrl">
-        <label for="word-input">Input</label>
-        <textarea class="form-control" rows="10" id="word-input" ng-model="mainCtrl.userInput" ng-trim="true"></textarea>
-        <div class="statistics">
-            <h3>Statistics</h3>
-            <ul class="list-group">
-                <li class="list-group-item">
-                    <span class="pull-right badge">
-                        {{mainCtrl.getWordCount()}}
-                    </span>
-                    Word Count
-                </li>
-                <li class="list-group-item">
-                    <span class="pull-right badge">
-                        {{mainCtrl.getCharacterCount()}}
-                    </span>
-                    Character Count
-                </li>
-                <li class="list-group-item">
-                    <span class="pull-right badge">
-                        {{mainCtrl.getMostCommonWord()}}
-                    </span>
-                    Most Common Word
-                </li>
-                <li class="list-group-item">
-                    <span class="pull-right badge">
-                        {{mainCtrl.getMostCommonCharacter()}}
-                    </span>
-                    Most Common Character
-                </li>
-            </ul>
+        <div class="alert alert-success" ng-show="mainCtrl.recentlySaved">
+            Input Saved!
+        </div>
+        <div class="row">
+            <div ng-class="{'col-md-8': mainCtrl.savedInputs.length }">
+                <h2>Process Input</h2>
+                <label for="word-input">Input</label>
+                <textarea class="form-control" rows="10" id="word-input" ng-model="mainCtrl.userInput" ng-trim="true"></textarea>
+                <button class="save-button btn btn-primary btn-block btn-lg" ng-click="mainCtrl.addSavedInput()">
+                    Save for later
+                </button>
+                <div class="statistics">
+                    <h3>Statistics</h3>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <span class="pull-right badge">
+                                {{mainCtrl.getWordCount()}}
+                            </span>
+                            Word Count
+                        </li>
+                        <li class="list-group-item">
+                            <span class="pull-right badge">
+                                {{mainCtrl.getCharacterCount()}}
+                            </span>
+                            Character Count
+                        </li>
+                        <li class="list-group-item">
+                            <span class="pull-right badge">
+                                {{mainCtrl.getMostCommonWord()}}
+                            </span>
+                            Most Common Word
+                        </li>
+                        <li class="list-group-item">
+                            <span class="pull-right badge">
+                                {{mainCtrl.getMostCommonCharacter()}}
+                            </span>
+                            Most Common Character
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4" ng-show="mainCtrl.savedInputs.length">
+                <h2>Recently Saved</h2>
+                <input
+                    type="text"
+                    class="form-control"
+                    ng-model="mainCtrl.savedSearch"
+                    placeholder="Filter saved inputs"
+                >
+                <hr>
+                <ul class="list-group">
+                    <li
+                        class="list-group-item"
+                        ng-repeat="input in mainCtrl.savedInputs | filter:mainCtrl.savedSearch | orderBy: '-time'"
+                    >
+                        <a href="" ng-click="mainCtrl.setInput(input.value)">{{input.value}}</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
     <footer class="page-footer">
