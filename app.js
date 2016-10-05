@@ -86,7 +86,7 @@ function MainController($timeout) {
 
         $timeout(function() {
             ctrl.recentlySaved = false;
-        }, 4000);
+        }, 2000);
     }
 
     function setInput(value) {

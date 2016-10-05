@@ -13,7 +13,7 @@
     <script src="https://use.fontawesome.com/a04d9e4c1c.js"></script>
     <link rel="stylesheet" type="text/css" href="/angular-word-counter/styles.css" />
 </head>
-<body>
+<body ng-cloak ng-controller="MainCtrl as mainCtrl">
     <header>
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container">
@@ -25,10 +25,12 @@
             </div>
         </nav>
     </header>
-    <div class="container" ng-cloak ng-controller="MainCtrl as mainCtrl">
-        <div class="alert alert-success" ng-show="mainCtrl.recentlySaved">
+    <div class="input-saved-alert container"  ng-show="mainCtrl.recentlySaved">
+        <div class="alert alert-success">
             Input Saved!
         </div>
+    </div>
+    <div class="container">
         <div class="row">
             <div ng-class="{'col-md-8': mainCtrl.savedInputs.length, 'col-md-12': !mainCtrl.savedInputs.length }">
                 <h2>Process Input</h2>

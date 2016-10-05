@@ -19,3 +19,14 @@ body {
 .save-button {
     margin-top: 12px;
 }
+
+.input-saved-alert {
+    position: relative;
+    z-index: 1000;
+}
+
+.input-saved-alert .alert{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+}
