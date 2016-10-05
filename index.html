@@ -30,7 +30,7 @@
             Input Saved!
         </div>
         <div class="row">
-            <div ng-class="{'col-md-8': mainCtrl.savedInputs.length }">
+            <div ng-class="{'col-md-8': mainCtrl.savedInputs.length, 'col-md-12': !mainCtrl.savedInputs.length }">
                 <h2>Process Input</h2>
                 <label for="word-input">Input</label>
                 <textarea class="form-control" rows="10" id="word-input" ng-model="mainCtrl.userInput" ng-trim="true"></textarea>
