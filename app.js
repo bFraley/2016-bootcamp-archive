@@ -69,10 +69,16 @@ function MainController($timeout) {
     }
 
     function addSavedInput () {
-        ctrl.savedInputs.push({
-            value: ctrl.userInput,
-            time: Date.now()
-        });
+        const existingItem = R.find((item) => ctrl.userInput === item.value)(ctrl.savedInputs);
+
+        if(existingItem) {
+            existingItem.time = Date.now();
+        } else {
+            ctrl.savedInputs.push({
+                value: ctrl.userInput,
+                time: Date.now()
+            });
+        }
 
         ctrl.recentlySaved = true;
 
