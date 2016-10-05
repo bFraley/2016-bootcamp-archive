@@ -1,4 +1,5 @@
 'use strict';
+
 function cleanInput(input) {
     return input
         .replace(/[?.,\/#!$%\^&\*;:{}=\-_`~()]/g,"")
@@ -7,12 +8,13 @@ function cleanInput(input) {
 
 const countMap = R.countBy(R.toLower);
 
+const countPairs = R.toPairs;
+
 const sortPairsDescending = R.pipe(
     R.sortBy(pair => pair[1]),
     R.reverse
 );
 
-const countPairs = R.toPairs;
 
 function MainController($timeout) {
     const ctrl = this;
