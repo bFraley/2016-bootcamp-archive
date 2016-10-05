@@ -68,7 +68,12 @@
                 </div>
             </div>
             <div class="col-md-4" ng-show="mainCtrl.savedInputs.length">
-                <h2>Recently Saved</h2>
+                <h2>
+                    Recently Saved
+                    <small>
+                        ({{mainCtrl.savedInputs.length}} total)
+                    </small>
+                </h2>
                 <input
                     type="text"
                     class="form-control"
