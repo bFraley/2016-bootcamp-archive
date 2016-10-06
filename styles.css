@@ -1,11 +1,32 @@
 body {
     padding-top: 70px;
+    background-color:#333;
 }
 
 footer {
     padding-bottom: 70px;
 }
 
+.btn {
+    margin:15px;
+}
+
 .contact-list {
-    /*background-color: #efefef;*/
+    background-color: #efefef;
+    border-radius: 5px;
+    font-size: 1.25em;
+    text-align: left;
+    min-height:300px;
+}
+
+.contact-display-panel {
+    min-height:300px;
+}
+
+.contact-display-items {
+    margin:5px auto;
+    list-style: none;
+    border-bottom:solid 2px #eee;
+    padding: 7px;
+    font-size: 1.1em;
 }

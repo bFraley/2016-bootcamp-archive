@@ -21,6 +21,7 @@
 
     <!-- Angular-1 JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.js"></script>
 
     <!-- Rambda JS Library -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/ramda/0.22.1/ramda.min.js"></script>
@@ -50,7 +51,7 @@
         <div class="row">
 
             <div class="col-md-6 contact-list">
-                <h3>Contact List</h3>
+                <h3>Contacts</h3>
                 <table class="table table-striped">
                 <tr>
                     <th>Name:</th>
@@ -64,13 +65,13 @@
             </div>
             <div class="col-md-6">
 
-                <div class="panel panel-default">
+                <div class="panel panel-default contact-display-panel">
                       <div class="panel-heading">
                         <h3 class="panel-title">Contact Details</h3>
                       </div>
                       <div class="panel-body">
                       <ul>
-                         <li ng-repeat="(key,value) in contactDisplay">
+                         <li class="contact-display-items" ng-repeat="(key,value) in contactDisplay">
                              {{value}}
                          </li>
                        </ul>
@@ -81,7 +82,7 @@
                     <button type="button" class="btn btn-default" ng-click="editContact()">Edit Contact</button>
                 </div>
 
-                <div class="panel panel-default" ng-show="showingForm">
+                <div class="panel panel-default fades" ng-show="showingForm">
                       <div class="panel-heading">
                         <h3 class="panel-title">Edit Contact</h3>
                       </div>

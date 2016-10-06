@@ -1,7 +1,7 @@
 /* app.js - Copyright 2016 by Gary Ditsch and Brett Fraley */
 
 // Define Angular module and our addressController.
-angular.module('app', [])
+angular.module('app', ['ngAnimate'])
     .controller('AddressCtrl', addressController);
 
 function addressController($scope) {
