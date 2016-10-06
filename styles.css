@@ -7,6 +7,12 @@ footer {
     padding-bottom: 70px;
 }
 
+.container {
+    padding:15px;
+    max-width:98%;
+    margin:auto;
+}
+
 .btn {
     margin:15px;
     font-size:1.25em;
@@ -22,6 +28,7 @@ footer {
     font-size: 1.25em;
     text-align: left;
     min-height:300px;
+    padding-top:5px;
 }
 
 .contact-display-panel {
