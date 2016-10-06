@@ -34,20 +34,24 @@ function addressController($scope) {
 
     // Add a new contact to addressBook on new form input.
     $scope.addNewContact = function() {
+        if (!$scope.contactForm.name) {
+            return false;
+        }
+        else {
+            var person = {
+                name:$scope.contactForm.name,
+                title:$scope.contactForm.title,
+                phone:$scope.contactForm.phone,
+                email:$scope.contactForm.email
+            };
 
-        var person = {
-            name:$scope.contactForm.name,
-            title:$scope.contactForm.title,
-            phone:$scope.contactForm.phone,
-            email:$scope.contactForm.email
-        };
+            $scope.addressBook.push(person);
 
-        $scope.addressBook.push(person);
+            $scope.showingForm = false;
 
-        $scope.showingForm = false;
-
-        // Reset the contact form.
-        $scope.resetContactForm();
+            // Reset the contact form.
+            $scope.resetContactForm();
+        }
     };
 
     // Return addressBook array.
