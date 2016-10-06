@@ -9,6 +9,11 @@ footer {
 
 .btn {
     margin:15px;
+    font-size:1.25em;
+}
+
+.btn:hover {
+    box-shadow:inset 0px 0px 10px skyblue;
 }
 
 .contact-list {
@@ -29,4 +34,12 @@ footer {
     border-bottom:solid 2px #eee;
     padding: 7px;
     font-size: 1.1em;
+}
+
+.fades.ng-hide-add, .fades.ng-hide-remove {
+  transition: all linear 0.5s;
+}
+
+.fades.ng-hide {
+  opacity: 0;
 }
