@@ -12,9 +12,9 @@ body {
     text-align:center;
     letter-spacing:0.2em;
 }
-.page-footer hr {
-    margin-top: 0;
-    border-color: #aaa;
+
+.navbar-brand {
+    font-family: 'Dancing Script', cursive;
 }
 
 .container {
