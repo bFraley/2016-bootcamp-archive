@@ -40,7 +40,6 @@
                     </span>
                 </div>
             </div>
-
         </div>
     </header>
 
@@ -50,38 +49,51 @@
 
         <div class="row">
 
-            <div class="col-md-6 contact-list">
-                <h3>Contacts</h3>
-                <table class="table table-striped">
-                <tr>
-                    <th>Name:</th>
-                </tr>
-                <tr ng-repeat="person in addressBook track by $index" ng-click="chosenContact($index)">
-                    <td>    
-                            <a href="#">{{person.name}}</a>
-                    </td>
-                </tr>
-                </table>
+            <div class="col-md-6 ">
+
+                <!-- Display for list of all contacts by name -->
+                <div class="panel panel-default contact-list">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Contacts</h3>
+                    </div>
+                
+                    <table class="table table-striped">
+                        <tr>
+                            <th>Name:</th>
+                        </tr>
+                        <tr ng-repeat="person in addressBook track by $index" ng-click="chosenContact($index)">
+                            <td>    
+                                <a href="#">{{person.name}}</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </div>
+
             <div class="col-md-6">
 
+                <!-- Display info for current chosen contact,
+                Uses ng-repeat to get key, value for a contact -->
                 <div class="panel panel-default contact-display-panel">
-                      <div class="panel-heading">
+                    <div class="panel-heading">
                         <h3 class="panel-title">Contact Details</h3>
-                      </div>
-                      <div class="panel-body">
+                    </div>
+                    <div class="panel-body">
                       <ul>
-                         <li class="contact-display-items" ng-repeat="(key,value) in contactDisplay">
-                             {{value}}
-                         </li>
-                       </ul>
-                      </div>
+                          <li class="contact-display-items" ng-repeat="(key,value) in contactDisplay">
+                              {{value}}
+                          </li>
+                      </ul>
+                    </div>
                 </div>
+
+                <!-- Add and Edit Buttons -->
                 <div class="btn-group" role="group">
                     <button type="button" class="btn btn-default" ng-click="showContactForm()">Add Contact</button>
                     <button type="button" class="btn btn-default" ng-click="editContact()">Edit Contact</button>
                 </div>
 
+                <!-- Contact Form -->
                 <div class="panel panel-default fades" ng-show="showingForm">
                       <div class="panel-heading">
                         <h3 class="panel-title">Edit Contact</h3>
@@ -107,9 +119,10 @@
                         <button type="button" class="btn btn-default" ng-click="resetContactForm()" ng-show="showingSaveEditContactButton">Save Contact</button>
                       </div>
                 </div>
-            </div><!-- End contact display column -->
-        </div>
-     </div><!-- close col 2 -->
+
+              </div><!-- End contact display column -->
+          </div>
+       </div><!-- close col 2 -->
    </div> <!-- close row 2 -->
 
 </div><!-- close container -->

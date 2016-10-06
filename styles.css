@@ -23,15 +23,15 @@ footer {
 }
 
 .contact-list {
-    background-color: #efefef;
-    border-radius: 5px;
     font-size: 1.25em;
     text-align: left;
     min-height:300px;
-    padding-top:5px;
+    padding:5px;
+    margin-top:20px;
 }
 
 .contact-display-panel {
+    margin-top:20px;
     min-height:300px;
 }
 
@@ -40,7 +40,7 @@ footer {
     list-style: none;
     border-bottom:solid 2px #eee;
     padding: 7px;
-    font-size: 1.1em;
+    font-size: 1.25em;
 }
 
 .fades.ng-hide-add, .fades.ng-hide-remove {
