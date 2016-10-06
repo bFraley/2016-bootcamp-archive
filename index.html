@@ -63,7 +63,7 @@
                         </tr>
                         <tr ng-repeat="person in addressBook track by $index" ng-click="chosenContact($index)">
                             <td>    
-                                <a href="#">{{person.name}}</a>
+                                <a ng-mouseover="chosenContact($index)" href="#">{{person.name}}</a>
                             </td>
                         </tr>
                     </table>
@@ -76,7 +76,7 @@
                 Uses ng-repeat to get key, value for a contact -->
                 <div class="panel panel-default contact-display-panel">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Contact Details</h3>
+                        <h3 class="panel-title">Contact Info</h3>
                     </div>
                     <div class="panel-body">
                       <ul>
@@ -115,9 +115,12 @@
                            <input type="email" ng-model="contactForm.email" class="form-control">
                        </div>
                         <!-- Display this save button with Add Contact -->
-                        <button type="button" class="btn btn-default" ng-click="addNewContact()" ng-show="showingSaveNewContactButton">Save Contact</button>
+                        <button type="button" class="btn btn-default" ng-click="addNewContact()"
+                        ng-show="showingSaveNewContactButton">Save Contact</button>
+
                         <!-- Display this save button with the Edit Contact -->
-                        <button type="button" class="btn btn-default" ng-click="resetContactForm()" ng-show="showingSaveEditContactButton">Save Contact</button>
+                        <button type="button" class="btn btn-default" ng-click="resetContactForm()"
+                        ng-show="showingSaveEditContactButton">Save Contact</button>
                       </div>
                 </div>
 
