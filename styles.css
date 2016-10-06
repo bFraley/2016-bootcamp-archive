@@ -55,6 +55,10 @@ body {
     font-size: 1.25em;
 }
 
+.fades {
+    margin-bottom:70px;
+}
+
 .fades.ng-hide-add, .fades.ng-hide-remove {
   transition: all linear 0.5s;
 }
