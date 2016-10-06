@@ -57,8 +57,7 @@ function addressController($scope) {
 
     // We call this to display a specific contact.
     $scope.chosenContact = function(selectedContact) {
-        $scope.contactDisplay = $scope.addressBook[selectedContact]
-        // $scope.contactForm = $scope.contactDisplay
+        $scope.contactDisplay = $scope.addressBook[selectedContact];
     };
 
     $scope.editContact = function() {
