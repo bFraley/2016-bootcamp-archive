@@ -1,6 +1,6 @@
 body {
 }
 
-.user-name {
+.user-name, .user-details h3 {
     text-transform: capitalize;
 }
