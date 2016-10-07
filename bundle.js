@@ -69,7 +69,7 @@
 	    ctrl.seed = null;
 	    ctrl.users = [];
 	
-	    $http.get('https://api.randomuser.me/', {
+	    $http.get('https://randomuser.me/api/', {
 	        params: {
 	            results: 25,
 	            seed: ctrl.seed
