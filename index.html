@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lorem User</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+
+    <!-- Scripts -->
+    <script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/a04d9e4c1c.js"></script>
+    <script src="bundle.js"></script>
+</head>
+<body ng-app="app" ng-cloak ng-controller="AppController as appCtrl">
+    <header>
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <span class="navbar-brand">
+                        <i class="fa fa-users" aria-hidden="true"></i>
+                        Lorem Users
+                    </span>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <h2>
+                    Random Users
+                    <span ng-show="appCtrl.seed">
+                        for {{appCtrl.seed}}
+                    </span>
+                    <small>({{appCtrl.users.length}})</small>
+                </h2>
+                <ul class="list-group">
+                    <li class="list-group-item" ng-repeat="user in appCtrl.users" >
+                        <span class="user-name">
+                            {{user.name.first}} {{user.name.last}}
+                        </span>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <h4>
+                            Change Seed
+                        </h4>
+                        <em>
+                            Current seed: {{appCtrl.seed || 'None'}}
+                        </em>
+                        <div class="form-group">
+                            <input type="text" ng-model="appCtrl.newSeed" class="form-control">
+                        </div>
+                        <button class="btn btn-primary btn-sm" ng-click="appCtrl.update()">
+                            Update
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

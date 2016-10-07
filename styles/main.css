@@ -1,0 +1,6 @@
+body {
+}
+
+.user-name {
+    text-transform: capitalize;
+}
