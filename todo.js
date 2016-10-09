@@ -11,6 +11,19 @@ function DDController($scope) {
     $scope.new_listname = '';
     $scope.current_list = '';
 
+    $scope.modes = {
+        seeInputField: true,
+        seeDoneButton: true,
+        seeDeleteButton:true,
+        seeDateField:true
+    }
+
+    $scope.events = {
+        doneClicked: function() {
+            console.log("Done Clicked");
+        }
+    }
+
     // Initial single list.
     $scope.list = [
         { content:'Item 1', datestamp:'DATE' },
@@ -28,6 +41,10 @@ function DDController($scope) {
             $scope.reset_user_input($scope.user_input);
             console.log("Task Saved!");
         } 
+    }
+
+    $scope.deleteTask = function(id) {
+        $scope.list[id] = 0;
     }
 
     // Clear the user_input value.

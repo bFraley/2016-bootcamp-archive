@@ -46,7 +46,7 @@
                 <li class="list-line" ng-repeat="item in list track by $index">
                     <input class="checkmark" type="checkbox">
                     <span class="todo-text">{{item.content}}</span>
-                    <span class="delete-x">X</span>
+                    <span class="delete-x" ng-click="deleteTask($index)">X</span>
                     <span class="date-text">{{item.datestamp}}</span>
                 </li>
               </ul>

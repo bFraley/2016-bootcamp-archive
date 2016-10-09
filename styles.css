@@ -83,6 +83,11 @@ div.well button:hover, div.well input:hover {
     float:right;
 }
 
+.delete-x:hover {
+    color:red;
+    cursor:pointer;
+}
+
 .user-input {
     width:75%;
     margin:auto;
