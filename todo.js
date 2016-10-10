@@ -42,9 +42,9 @@ function DDController($scope) {
             console.log("Task Saved!");
         } 
     }
-
+    // Remove the task at the given index of list.
     $scope.deleteTask = function(id) {
-        $scope.list[id] = 0;
+        $scope.list.splice(id, 1);
     }
 
     // Clear the user_input value.
