@@ -36,12 +36,25 @@
 
             <div class = "row">
                 <span>Filter</span>
-                <button class="btn btn-md">Complete</button>
-                <button class="btn btn-md">Incomplete</button>
+                <button class="btn btn-md" ng-click="getCompleteItems()">Complete</button>
+                <button class="btn btn-md" ng-click="getIncompleteItems()">Incomplete</button>
             </div>
  
             <div class="row list-display">
               <ul>
+                <li class="list-line" ng-if="modes.seeChecked" ng-repeat="item in complete">
+                    <input class="checkmark" type="checkbox" ng-model="item.checked">
+                    <span class="todo-text">{{item.content}}</span>
+                    <span class="delete-x" ng-click="deleteTask($index)">X</span>
+                    <span class="date-text">{{item.datestamp}}</span>
+                </li>
+
+                <li class="list-line" ng-if="modes.seeNotChecked" ng-repeat="item in not_complete">
+                    <input class="checkmark" type="checkbox" ng-checked="item.checked">
+                    <span class="todo-text">{{item.content}}</span>
+                    <span class="delete-x" ng-click="deleteTask($index)">X</span>
+                    <span class="date-text">{{item.datestamp}}</span>
+                </li>
 
                 <li class="list-line" ng-if="sort_def" ng-repeat="item in list track by $index">
                     <input class="checkmark" type="checkbox" ng-checked="item.checked">
