@@ -30,8 +30,8 @@
 
             <div class = "row">
                 <span>Sort</span>
-                <button class="btn btn-md">Date Added</button>
-                <button class="btn btn-md">Alphabetically</button>
+                <button class="btn btn-md" ng-click="dateSort()">Date Added</button>
+                <button class="btn btn-md" ng-click="alphaSort()">Alphabetically</button>
             </div>
 
             <div class = "row">
@@ -41,23 +41,41 @@
             </div>
  
             <div class="row list-display">
-
               <ul>
-                <li class="list-line" ng-repeat="item in list track by $index">
-                    <input class="checkmark" type="checkbox">
+
+                <li class="list-line" ng-if="sort_def" ng-repeat="item in list track by $index">
+                    <input class="checkmark" type="checkbox" ng-checked="item.checked">
                     <span class="todo-text">{{item.content}}</span>
                     <span class="delete-x" ng-click="deleteTask($index)">X</span>
                     <span class="date-text">{{item.datestamp}}</span>
                 </li>
+                
+                <li class="list-line" ng-if="sort_alpha" ng-repeat="item in list | orderBy:'content'">
+                    <input class="checkmark" type="checkbox" ng-checked="item.checked">
+                    <span class="todo-text">{{item.content}}</span>
+                    <span class="delete-x" ng-click="deleteTask(item[$index])">X</span>
+                    <span class="date-text">{{item.datestamp}}</span>
+                </li>
+                    
+                <li class="list-line" ng-if="sort_date" ng-repeat="item in list | orderBy:'-datestamp'">
+                    <input class="checkmark" type="checkbox" ng-checked="item.checked">
+                    <span class="todo-text">{{item.content}}</span>
+                    <span class="delete-x" ng-click="deleteTask($index)">X</span>
+                    <span class="date-text">{{item.datestamp}}</span>
+                </li>
+ 
               </ul>
             </div>
 
             <div class="row">
-                <input class="user-input" ng-model="user_input" placeholder="add new" required="true"></input>
+                <input class="user-input" ng-model="user_input" placeholder="add new" 
+                    ng-show="modes.seeInputField" required="true">
+                </input>
             </div>
 
             <div class="row addnew">
-                <button  ng-click="save_task()">New Task</button>
+                <button  ng-show="modes.seeNewTask" ng-click="events.newClicked()">New Task</button>
+                <button  ng-show="modes.seeInputField" ng-show="addingNew" ng-click="save_task()">Save Task</button>
             </div>
 
        </div>
