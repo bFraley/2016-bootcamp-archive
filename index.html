@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="Create and grow high tech startups">
+    <meta property="og:url" content="/">
+    <meta name="author" content="Awesome Inc">
+    <meta name="google-site-verification" content="ZHa3CqXpt-ieUEB4w2KPISG0VTXYEnoGFNtCsaY3yeo">
+    <title>Awesome Inc - Create and grow high tech startups</title>
+    
+
+    <!-- team alpha img layover -->
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen">
+    
+    <!-- Goolge Fonts -->
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="bs/css/bootstrap.min.css"/>
+ 
+    <!-- Custom styles for this template -->
+    <link href="main.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" type="text/css" href="exo.css">
+
+    <link href="/assets/css/modalPopLite.css" rel="stylesheet" type="text/css" defer="defer">
+
+    <script src="bs/js/jquery-3.1.0.min.js" defer="defer"></script>
+    <script src="/assets/js/dropdown.js" type="text/javascript" defer="defer"></script>
+    <script src="js/main.js" type="text/javascript" defer="defer"></script>
+    <script src="js/modernizr.js" type="text/javascript" defer="defer"></script>
+
+</head>
+ 
+   <body>
+    <div id="features">
+
+         <div class="navbar navbar-default navbar-fixed-top navbar-static">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+           <!-- Old Header Text 
+           <a class="navbar-brand" href="#"><b>Awesome Inc</b></a>
+             -->
+             <!-- Added to make the logo move down a little.
+             -->
+            <div style="margin: 0px; padding:0px; clear: both; height: 6px">
+                &nbsp;
+            </div>
+
+            <a href="/"><img src="logo.png" alt="Awesome Inc Logo"> </a>
+        </div>
+
+        <div class="navbar-collapse collapse navbar-inner">
+          
+        <ul id="sddm" class="nav navbar-nav right-nav"> <!-- RIGHT ALIGNED NAVBAR -->
+            <li  class="dropdown">  <!-- ABOUT -->
+                <a href="/about/" 
+                onmouseover="mopen('m1')" 
+                onmouseout="mclosetime()">About
+                </a>
+                <div id="m1" onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+                        <a href="/about/#core-values">Core Values</a>
+                        <a href="blog.awesomeinc.org">Our Blog</a>
+                        <a href="/about/#events">Events</a>
+                        <a href="/culture-book.pdf">Culture Book</a>
+                  
+                </div>
+            </li> 
+            <li  class="dropdown">  <!-- FOR ENTREPRENEURS -->
+                <a href="/for-entrepreneurs/" 
+                onmouseover="mopen('m2')" 
+                onmouseout="mclosetime()">For Entrepreneurs
+                </a>
+                <div id="m2" onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+                        <a href="/for-entrepreneurs/#fellowship">Fellowship Program</a>
+                        <a href="/for-entrepreneurs/#5across">5 Across</a>
+                        <a href="/for-entrepreneurs/#cherub">Cherub Fund</a>
+                        <a href="/for-entrepreneurs/#swlex">Startup Weekend</a>
+                        <a href="/for-entrepreneurs/#hof">Entrepreneur Hall of Fame</a>
+                        <a href="/teamalphaservices">Team Alpha Services</a>
+                        <a href="/for-entrepreneurs/#idea">I Have an Idea</a>
+                </div>
+            </li>
+            <li class="dropdown">    <!-- LEARN TO CODE -->
+                <a href="http://www.awesomeincu.com" 
+                onmouseover="mopen('m3')" 
+                onmouseout="mclosetime()"
+                >Learn to Code
+                </a>
+                <div id="m3" onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+                        <a href="http://www.awesomeincu.com/#courses">Upcoming Classes</a>
+                        <a href="http://awesomeincu.com/blog">The Blog</a>
+                        <a href="http://www.awesomeincu.com/register/">Register</a>
+                </div>
+            </li>
+            <li  class="dropdown">   <!-- COWORKING -->
+                <a href="/coworking/" 
+                onmouseover="mopen('m4')" 
+                onmouseout="mclosetime()">Coworking
+                </a>
+                <div id="m4" onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+                        <a href="/coworking/#features">Features</a>
+                  <a href="/coworking/#tour">Schedule a Tour</a>
+                        <a href="/coworking/#rent-space">Rent Space</a>
+                </div>
+            </li>
+            <li  class="dropdown">  <!-- INTERNSHIPS -->
+                <a href="/internships/" 
+                onmouseover="mopen('m5')" 
+                onmouseout="mclosetime()">Internships
+                </a>
+                <div id="m5" onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+                        <a href="https://docs.google.com/spreadsheet/embeddedform?formkey=dDNLRTI0MmcyYWtDSDZNNGZOVERfNUE6MQ">Apply Now</a>
+                        <a href="/internships/#who">Who We Are</a>
+                        <a href="/team-alpha">Current Team</a>
+                        <!--<a href="/team-alpha-alumni"> Alumni</a>-->
+                </div>
+            </li>
+            <li>
+                <a class="stay-connected" data-toggle="modal" data-target="#email-popup" style="color: rgb(184, 17, 36); cursor:pointer">Stay Connected</a>
+            </li>
+
+
+
+          </ul>
+          <div style="clear:both"></div>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+
+    <div class="container">
+
+            <div class="col-md-4 col-xs-12">
+                    <a href="/for-entrepreneurs/">
+                        <div class="feature-img feature-img-left">
+                        </div>
+                    </a>
+                
+                <h2>For Entrepreneurs </h2>
+                <p>Find out what you can get involved in around Awesome Inc and our entrepreneurial community</p>
+
+            </div>
+            <div class="col-md-4 col-xs-12">
+    
+                <a href="http://www.awesomeincu.com">
+                    <div class="feature-img feature-img-right">
+                    </div>
+                </a>
+                <h2> Learn To Code </h2>
+                <p>Get involved in our belief and mission that everybody can and should learn to code</p>
+            </div>
+            <div class="col-md-4 col-xs-12">
+                <a href="/coworking/">
+                    <div class="feature-img feature-img-center">
+                    </div>
+                </a>    
+                <h2> Coworking</h2> 
+                <p>Become a tenant through Rent a Desk or rent out the space for events, meetings, and more</p>
+            </div>
+            <!-- /col -->
+    </div><!-- /container -->
+</div>
+<!-- end of features conatiner -->
+
+<div class="">
+      <div id="headerwrap" style="height: 583px; width: 1672px;">
+    <div class="container">
+        <div class="col-lg-7">
+            <h1><b>Awesome Inc</b> <br>
+                </h1><h2 class="subtitle">
+                    Create and grow high tech startups
+                </h2>
+            
+        </div><!-- /col-lg-7 -->
+    </div><!-- /container -->
+</div> <!-- /headerwrap -->
+
+<!-- Wrap -->
+<div id="features">
+    
+    <div class="container">
+
+            <div class="col-md-4 col-xs-12">
+                    <a href="/for-entrepreneurs/">
+                        <div class="feature-img feature-img-left">
+                        </div>
+                    </a>
+                
+                <h2>For Entrepreneurs </h2>
+                <p>Find out what you can get involved in around Awesome Inc and our entrepreneurial community</p>
+
+            </div>
+            <div class="col-md-4 col-xs-12">
+    
+                <a href="http://www.awesomeincu.com">
+                    <div class="feature-img feature-img-right">
+                    </div>
+                </a>
+                <h2> Learn To Code </h2>
+                <p>Get involved in our belief and mission that everybody can and should learn to code</p>
+            </div>
+            <div class="col-md-4 col-xs-12">
+                <a href="/coworking/">
+                    <div class="feature-img feature-img-center">
+                    </div>
+                </a>    
+                <h2> Coworking</h2> 
+                <p>Become a tenant through Rent a Desk or rent out the space for events, meetings, and more</p>
+            </div>
+            <!-- /col -->
+    </div><!-- /container -->
+</div><!-- / wrap -->
+    
+    
+
+<!-- /White Wrap Version 2 - The Space -->  
+        </div>
+
+
+<div class="container bottom">
+            <div class="row">
+                <div class="col-lg-4">
+                
+                    <h3>About Awesome Inc</h3>
+                    <p>We exist to create and grow high tech startups. We do this by hosting community events, leading technology education courses, and offering a shared workspace environment. <br><a href="/culture-book.pdf">View Our Culture Book</a></p>
+        
+                </div>
+            
+                <div class="col-lg-4" id="footer-links">
+                    
+                    <h3>Our Headquarters</h3>
+                    <p><a href="http://maps.google.com/maps/place?ie=UTF8&amp;q=awesome+inc&amp;fb=1&amp;gl=us&amp;hq=awesome+inc&amp;hnear=Lexington,+KY+40507&amp;cid=8954829338718477855&amp;t=h&amp;z=14">
+                        348 E. Main St.<br>
+                        Lexington, KY 40507</a><br>
+                        <a href="tel:+15022099960">502-209-9960</a><br>
+                        <a href="mailto:founders@awesomeinc.org">founders@awesomeinc.org</a><br>
+
+                        <!-- Parking Modal -->
+                        <b><a data-toggle="modal" href="#parking">Parking</a></b>
+                    
+                            </p><div class="container">
+                                <div class="row centered">
+    
+                                              <div class="modal fade" id="parking" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                  <div class="modal-content">
+                                                    <div class="modal-header">
+                                                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                                      <h4 class="modal-title">Parking</h4>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                      <p>
+                                                          <b>Where you can park:</b><br><br>
+
+                                                          Check out the <a href="https://maps.google.com/maps/ms?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;ie=UTF8&amp;hq=parking+near+awesome+inc&amp;hnear=&amp;msa=0&amp;msid=114116276748560767348.000478ba713245b668b31&amp;ll=38.041577,-84.492438&amp;spn=0.003333,0.004823&amp;t=h&amp;z=18"><u>Map of Parking</u></a> near Awesome Inc.<br><br>
+
+                                                          <b>Park Here:</b><br>
+
+                                                           Option 1: Behind building at the corner of Main and Midland/E. Vine (formerly People’s Exchange Bank)  <br>Option 2: Lot to the left of Awesome Inc building <br> Option 3: Metered spots behind the building (on Water St.) <br> Option 4:Parking Garage - across the street, under “Main and Vine” apartment/condo complex.<br><br>
+
+                                                         <b> Do Not Park:</b><br>
+
+                                                          Outside the retail plaza (in front of garage) <br>Spaces marked for Wells Fargo, Commerce Lexington, Porter Paints or VisitLex<br>
+                                                      
+                                      
+                                                      </p>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                    </div>
+                                                  </div><!-- /.modal-content -->
+                                                </div><!-- /.modal-dialog -->
+                                              </div><!-- /.modal -->
+        
+                                </div><!-- /row -->
+                            </div><!-- /container -->
+                            <!-- Parking Modal -->
+                    <p></p>
+            
+                </div>
+                <div class="col-lg-4">
+                
+                    <h3>Newsletter</h3>
+                    <p>Get monthly updates from the Awesome Inc community.</p>
+
+                    <link href="//cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
+
+                    <div id="mc_embed_signup">
+                    <form style="padding:0px" action="//awesomeinc.us2.list-manage.com/subscribe/post?u=5114422b2183673d50186748d&amp;id=de5f188075" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" novalidate="">
+                        <input style="margin: auto; width:170px" type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required="">
+                        <div style="margin-bottom:5px;" class="clear footer-signup">
+                            <input style="margin: auto;margin-top: 1em; background-color:#d43f3a" onmouseover="this.style.color='rgb(255,155,155)'" onmouseout="this.style.color='white'" type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+                        </div>
+                    </form>
+                    </div>
+                
+                </div>
+            </div>
+            </div>
+
+
+
+</body>
+</html>
